@@ -33,6 +33,17 @@
  * integer within the range [1..1,000,000,000].
  */
 
+//SCORE 100% (CORRECTNESS 100%; PERFORMANCE 100%;)
+function myPermCheck(A) {
+  if(!A?.length)
+      return 0;
+  const arr = [...new Set(A)];
+  if(arr.length !== A.length) return 0;
+  arr.sort((a,b)=>a-b);
+  if(arr[0]!==1 || arr[arr.length-1]!==arr.length) return 0;
+  else return 1;
+}
+
 function solution(A) {
   const values = new Array(A.length).fill(false)
   for (let i in A) {

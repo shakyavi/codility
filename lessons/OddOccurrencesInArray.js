@@ -28,7 +28,34 @@
  * in A occur an even number of times.
  */
 
-function solution(A) {
+//SWAP with ConsecutiveElementsDifferences
+
+//66%
+function myOddOccurenceSolution(A) {
+  // Implement your solution here
+  const B = [...new Set(A)];
+  const result = [];
+  B.map( (key) => {
+      const count = A.filter( (val) => val===key ).length;
+      result.push({key,count});        
+  } )
+  const oddVal = result.find( (obj) => obj.count%2!==0)
+  return oddVal.key
+}
+
+//66%
+function myOddOccurenceStack(A) {
+  // Implement your solution here
+  const stack = [];
+  for (let idx = 0; idx < A.length; idx++) {
+    const elementIndex = stack.indexOf(A[idx]);
+    if (elementIndex == -1) stack.push(A[idx]);
+    else stack.splice(elementIndex, 1);
+  }
+  return stack?.length > 0 ? stack[0] : -1;
+}
+//100%
+function oddOccurenceSolution(A) {
   let stack = {}
   for (let i = 0; i < A.length; i++) {
     if (typeof stack[A[i]] === 'undefined') {
@@ -41,4 +68,4 @@ function solution(A) {
   return +Object.keys(stack)[0]
 }
 
-module.exports = solution
+module.exports = oddOccurenceSolution

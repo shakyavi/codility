@@ -42,8 +42,9 @@
  * N and X are integers within the range [1..100,000]; each element of array A
  * is an integer within the range [1..X].
  */
-
-function solution(X, A) {
+//X=5
+//A=[1,4,2,3,7,8]
+function frogRiverOne(X, A) {
   const realSum = X * (X + 1) / 2
   const leaves = new Array(X).fill(false)
   let actualSum = 0
@@ -60,4 +61,4 @@ function solution(X, A) {
   return -1
 }
 
-module.exports = solution
+module.exports = frogRiverOne

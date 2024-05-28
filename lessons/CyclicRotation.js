@@ -36,9 +36,9 @@
  * correctness. The performance of your solution will not be the focus of the
  * assessment.
  */
-function solution(A, K) {
+function cyclicRotation(A, K) {
   const index = K % A.length
   return A.splice(A.length - index, index).concat(A)
 }
 
-module.exports = solution
+module.exports = cyclicRotation

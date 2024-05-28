@@ -37,7 +37,25 @@
  * is an integer within the range [1..N + 1].
  */
 
-function solution(N, A) {
+//SCORE 66% (CORRECTNESS 100%; PERFORMANCE 40%;)
+//Detected time complexity O(N*M)
+//failed large_random performance tests
+function myMaxCounter(N, A) {
+  // Implement your solution here
+  if(!A?.length || !N)    
+      return Array(N).fill(0)
+  const counters = Array(N).fill(0);
+  for(let i=0;i<A.length;i++){        
+      const op = A[i];
+      if(op===N+1)
+          counters.fill(Math.max(...counters))
+      else if(0<op<N+1)
+          counters[op-1]++
+  }
+  return counters
+}
+
+function maxCounter(N, A) {
   const counters = new Array(N).fill(0)
   let min = 0
   let max = 0
@@ -58,4 +76,4 @@ function solution(N, A) {
   return counters
 }
 
-module.exports = solution
+module.exports = maxCounter
