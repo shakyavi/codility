@@ -18,7 +18,7 @@ let solution = 'solution'
 // const triangle = require('./lessons/Triangle');
 // solution = triangle([1,2,3,5,8,10])
 
-const bracketTest = require('./lessons/07-01-Brackets-Stack-Queue');
+const bracketTest = require('./lessons/07-Stacks&Queues-01-Brackets-Stack-Queue');
 solution = bracketTest('{[(){}]}()');
 
 console.log(solution)

@@ -1,4 +1,4 @@
-const binaryGap = require('./BinaryGap')
+const binaryGap = require('./01-Iterations-01-BinaryGap')
 
 test('binary gap for 9 is 2', () => {
   expect(binaryGap(9)).toBe(2)
